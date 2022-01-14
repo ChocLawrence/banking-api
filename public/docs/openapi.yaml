@@ -1,0 +1,1070 @@
+openapi: 3.0.3
+info:
+  title: Lumen
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/accounts:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'Account Management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Account Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account_type:
+                  type: string
+                  description: ''
+                  example: voluptas
+                user_id:
+                  type: string
+                  description: ''
+                  example: architecto
+              required:
+                - account_type
+                - user_id
+      security: []
+  '/api/accounts/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'Account Management'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Account Management'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Account Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: sequi
+        required: true
+        schema:
+          type: string
+  '/api/accounts/balance/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'Account Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: aut
+        required: true
+        schema:
+          type: string
+  '/api/accounts/history/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'Account Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: inventore
+        required: true
+        schema:
+          type: string
+  /api/accounttypes:
+    get:
+      summary: 'GET account types'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 51
+                    name: h8dUKY2eOy
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:16:19.000000Z'
+                    updated_at: '2022-01-14T19:16:19.000000Z'
+                  -
+                    id: 52
+                    name: 0M1rymCA5K
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:16:31.000000Z'
+                    updated_at: '2022-01-14T19:16:31.000000Z'
+                  -
+                    id: 53
+                    name: 4QQprZMoHT
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:16:46.000000Z'
+                    updated_at: '2022-01-14T19:16:46.000000Z'
+                  -
+                    id: 54
+                    name: ATvHX6jrWO
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:19:04.000000Z'
+                    updated_at: '2022-01-14T19:19:04.000000Z'
+                  -
+                    id: 55
+                    name: K4mHlw0x4W
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:20:13.000000Z'
+                    updated_at: '2022-01-14T19:20:13.000000Z'
+                  -
+                    id: 56
+                    name: bUHuxa6IB5
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:20:39.000000Z'
+                    updated_at: '2022-01-14T19:20:39.000000Z'
+                  -
+                    id: 57
+                    name: 4u4G56cpZ6
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:21:12.000000Z'
+                    updated_at: '2022-01-14T19:21:12.000000Z'
+                  -
+                    id: 58
+                    name: 8qt9dIK9V5
+                    minimum_amount: '10000.00'
+                    maximum_amount: '99999999.99'
+                    created_at: '2022-01-14T19:22:06.000000Z'
+                    updated_at: '2022-01-14T19:22:06.000000Z'
+      tags:
+        - 'Account Type Management'
+      security: []
+    post:
+      summary: 'CREATE account type'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Account Type Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the account type.'
+                  example: Savings
+                miniumum_amount:
+                  type: string
+                  description: 'Minimum amount of account.'
+                  example: '100000001'
+                maxiumum_amount:
+                  type: string
+                  description: 'Maximum amount of account.'
+                  example: '999999999'
+              required:
+                - name
+                - miniumum_amount
+                - maxiumum_amount
+      security: []
+  '/api/accounttypes/{id}':
+    put:
+      summary: 'UPDATE account type'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Account Type Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the account type.'
+                  example: Savings
+                miniumum_amount:
+                  type: string
+                  description: 'Minimum amount of account.'
+                  example: '100000001'
+                maxiumum_amount:
+                  type: string
+                  description: 'Maximum amount of account.'
+                  example: '999999999'
+              required:
+                - name
+                - miniumum_amount
+                - maxiumum_amount
+      security: []
+    delete:
+      summary: 'DELETE account type'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Account Type Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: ea
+        required: true
+        schema:
+          type: string
+  /api/register:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
+  /api/login:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      security: []
+  /api/pins:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'Pin Management'
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Pin Management'
+      security: []
+  '/api/pins/{id}':
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Pin Management'
+      security: []
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Pin Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: quia
+        required: true
+        schema:
+          type: string
+  /api/roles:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    name: customer
+                    created_at: '2022-01-12T21:49:37.000000Z'
+                    updated_at: '2022-01-12T21:49:37.000000Z'
+                  -
+                    id: 2
+                    name: admin
+                    created_at: '2022-01-12T21:49:37.000000Z'
+                    updated_at: '2022-01-12T21:49:37.000000Z'
+                  -
+                    id: 3
+                    name: employee
+                    created_at: '2022-01-12T21:49:37.000000Z'
+                    updated_at: '2022-01-12T21:49:37.000000Z'
+      tags:
+        - 'Role Management'
+      security: []
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Role Management'
+      security: []
+  '/api/roles/{id}':
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Role Management'
+      security: []
+    delete:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Role Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: eos
+        required: true
+        schema:
+          type: string
+  /api/transactions:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'Transaction Management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Transaction Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  description: 'Must not be greater than 9999999999.99.'
+                  example: 3262533275
+                sender_account:
+                  type: string
+                  description: 'The value and <code>receiver_account</code> must be different.'
+                  example: natus
+                receiver_account:
+                  type: string
+                  description: 'The value and <code>sender_account</code> must be different.'
+                  example: suscipit
+              required:
+                - amount
+                - sender_account
+                - receiver_account
+      security: []
+  '/api/transactions/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'Transaction Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: exercitationem
+        required: true
+        schema:
+          type: string
+  /api/users:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'User Management'
+      security: []
+  '/api/users/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Unauthorized.
+      tags:
+        - 'User Management'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Management'
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Management'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: quas
+        required: true
+        schema:
+          type: string
+  /api/users/search:
+    post:
+      summary: 'Search a specified resource from storage.'
+      description: 'by first_name, last_name in user'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Management'
+      security: []
+  '/api/users/change-pass/{id}':
+    post:
+      summary: 'Change password'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'User Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: ''
+                  example: ut
+                new_password:
+                  type: string
+                  description: ''
+                  example: nesciunt
+              required:
+                - current_password
+                - new_password
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: ''
+        example: impedit
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: 'Account Management'
+    description: "\nAccount functionalities"
+  -
+    name: 'Account Type Management'
+    description: "\nAccount Type functionalities"
+  -
+    name: Authentication
+    description: "\nAuthentication functionalities"
+  -
+    name: 'Pin Management'
+    description: "\nPin functionalities"
+  -
+    name: 'Role Management'
+    description: "\nRole functionalities"
+  -
+    name: 'Transaction Management'
+    description: "\nTransaction functionalities"
+  -
+    name: 'User Management'
+    description: "\nUser functionalities"

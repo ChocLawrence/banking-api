@@ -1,3 +1,46 @@
+# Setting up project
+
+1. Clone the repository into your computer
+2. cd into the laravel lumen project
+3. Edit .env file using contents of .env.example
+4. composer install
+5. composer update
+6. php artisan serve
+7. Dev enviroment will be located on http://localhost:8000
+
+
+
+# Unit Tests
+
+1. Migrate tables with php artisan migrate; 
+2. Run /vendor/bin/phpunit
+
+    Sample unit tests screenshot:
+    ![alt text](./screenshots/unittest.png "Unit tests")
+
+# Documentation
+   Documentation was generated with scribe(https://scribe.knuckles.wtf/laravel/)
+   Run php artisan scribe:generate after any change to routes/Controllers
+
+   Documentation can be accessed at http://localhost:8000/docs
+
+
+# Screenshots
+    
+1. Transfer:
+    ![alt text](./screenshots/transfer.png "Transfer")
+
+2. Account history:
+    ![alt text](./screenshots/history.png "Account History")
+
+2. Account balance:
+    ![alt text](./screenshots/balance.png "Account Balance")
+
+2. MySQL Table:
+    ![alt text](./screenshots/mysql-table.png "MySQL Table")    
+
+
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
@@ -22,3 +65,5 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ## License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+

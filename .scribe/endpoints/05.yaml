@@ -1,0 +1,98 @@
+name: 'Transaction Management'
+description: |-
+
+  Transaction functionalities
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/transactions
+    metadata:
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: Unauthorized.
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/transactions/{id}'
+    metadata:
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: ''
+        required: true
+        example: exercitationem
+        type: string
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 401
+        content: Unauthorized.
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/transactions
+    metadata:
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      amount:
+        name: amount
+        description: 'Must not be greater than 9999999999.99.'
+        required: true
+        example: 3262533275
+        type: number
+        custom: []
+      sender_account:
+        name: sender_account
+        description: 'The value and <code>receiver_account</code> must be different.'
+        required: true
+        example: natus
+        type: string
+        custom: []
+      receiver_account:
+        name: receiver_account
+        description: 'The value and <code>sender_account</code> must be different.'
+        required: true
+        example: suscipit
+        type: string
+        custom: []
+    responses: []
+    responseFields: []

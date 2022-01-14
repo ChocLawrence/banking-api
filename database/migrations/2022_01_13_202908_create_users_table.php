@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade')->default(1);
+            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade')->default('1');
             $table->enum('gender',['male','female']);
             $table->string('phone')->unique();
             $table->string('email')->unique();
