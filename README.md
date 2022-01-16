@@ -7,6 +7,10 @@
 5. composer update
 6. php artisan serve
 7. Dev enviroment will be located on http://localhost:8000
+8. Create 3 roles with names "customer","admin","employee"  | Must be named exactly this
+9. Create users with those roles.
+10. Create 2 or more account types with names "savings","deposits", etc
+11. Test
 
 
 
