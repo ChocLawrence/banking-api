@@ -55,13 +55,18 @@ class PinController extends Controller
             }
 
             //get account id.
-            $account = Account::where('account_number',$input['account_number'])->firstOrFail();
+            $account = Account::where('account_number',$input['account_number'])->first();
 
             if(!$account){
-                return response()->json(['status' => 'error', 'message' => 'Account not found']);
+                return response()->json(['status' => 'error', 'message' => 'Account with id not found']);
             }
 
-            //check if account already has a pin
+            //check if account already has a pin and if account is owned by requesting user
+            if($account->user_id !==  $userId ){
+                return response()->json(['status' => 'error', 'message' => 'Account does not belong to you']);
+            }
+
+
             $accountPin = Pin::where('account_id',$account->id)->first();
            
             if($accountPin){

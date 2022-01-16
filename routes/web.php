@@ -24,15 +24,14 @@ $router->group(['prefix'=>'api'], function () use ($router) {
     $router->post('/login', 'AuthController@login');
     
     $router->get('/accounttypes','AccountTypeController@index');
-    $router->get('/roles','RoleController@index');
-
 
     $router->group(['middleware' => 'auth'], function () use ($router) {
 
         //logout
         $router->post('/logout', 'AuthController@logout');
 
-        //roles
+        //roles - admin only
+        $router->get('/roles','RoleController@index'); 
         $router->post('/roles','RoleController@store');
         $router->put('/roles/{id}', 'RoleController@update');
         $router->delete('/roles/{id}', 'RoleController@destroy');

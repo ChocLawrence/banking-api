@@ -24,8 +24,19 @@ class AccountController extends Controller
      *
      * @return Response
      */
-    public function index(): Response
+    public function index()
     {
+         //get authenticated users Id
+         $userId = Auth::id();
+         $user = User::where('id',$userId)->firstOrFail();
+         $role = Role::find($user->role_id);
+         if($role->name != 'admin' && $role->name != 'employee'){
+             return response()->json([
+                 'status' => '500',
+                 'message' => 'Unauthorized action'
+             ],401);
+         }
+ 
         return response(Account::all());
     }
 
@@ -79,10 +90,11 @@ class AccountController extends Controller
              ],401);
          }
 
+         //customerId is same as authenticated user, creation should not work.Means the person is trying to create an account for themself
          if($customerFound->id == $userId){
             return response()->json([
                 'status' => '500',
-                'message' => 'Invalid creation.'
+                'message' => 'Invalid creation.You cannot create an account for yourself.'
             ],401);  
          }
 
@@ -289,8 +301,32 @@ class AccountController extends Controller
             }
 
             $account = Account::findOrFail($id);
-            $account->account_type = $request->account_type;
-            $account->user_id = $request->user_id;
+
+            if($request->account_type){
+                $accountTypeFound = AccountType::find($request->account_type);
+                if($accountTypeFound){
+                    $account->account_type = $request->account_type;
+                }else{
+                    return response()->json([
+                        'status' => '500',
+                        'message' => 'Invalid account type id'
+                    ],404);
+                }
+            }
+
+            if($request->user_id){
+                $userFound = User::find($request->user_id);
+                if($userFound){
+                    $account->user_id = $request->user_id;
+                }else{
+                    return response()->json([
+                        'status' => '500',
+                        'message' => 'Invalid user id'
+                    ],404);
+                }
+            }
+
+            
             $account->balance = $request->balance;
 
             if ($account->save()) {

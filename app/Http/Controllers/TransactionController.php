@@ -25,8 +25,19 @@ class TransactionController extends Controller
      *
      * @return Response
      */
-    public function index(): Response
+    public function index()
     {
+        //get authenticated users Id
+        $userId = Auth::id();
+        $user = User::where('id',$userId)->firstOrFail();
+        $role = Role::find($user->role_id);
+        if($role->name != 'admin' && $role->name != 'employee'){
+            return response()->json([
+                'status' => '500',
+                'message' => 'Unauthorized action'
+            ],401);
+        }
+
         return response(Transaction::latest()->get());
     }
 
@@ -147,7 +158,7 @@ class TransactionController extends Controller
      * @param int $id
      * @return Response
      */
-    public function destroy(int $id): Response
+    public function destroy(int $id)
     {
         return response(Transaction::destroy($id));
     }

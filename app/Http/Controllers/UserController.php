@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +25,18 @@ class UserController extends Controller
      */
     public function index(): Response
     {
+
+        //get authenticated users Id
+        $userId = Auth::id();
+        $user = User::where('id',$userId)->firstOrFail();
+        $role = Role::find($user->role_id);
+        if($role->name != 'admin'){
+            return response()->json([
+                'status' => '500',
+                'message' => 'Unauthorized action'
+            ],401);
+        }
+
         return response(User::all());
     }
 
@@ -62,7 +75,7 @@ class UserController extends Controller
         }
 
         $user->update($request->all());
-        return response(['message' => 'Record updated', 'user' => $user]);
+        return response(['message' => 'User record updated', 'user' => $user]);
     }
 
     /**
