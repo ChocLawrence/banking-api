@@ -34,7 +34,7 @@ x-api-key = sportsMediaX123BIN
 Authorization Bearer Token
 
 
-![API ACCESS](https://github.com/ChocLawrence/banking-api/blob/main/public/images/screenshot1.png?raw=true)
+![API ACCESS](https://github.com/ChocLawrence/banking-api/blob/main/public/images/screenshot2.png?raw=true)
 
 
 ## Endpoints
