@@ -1,3 +1,58 @@
+# Sports Media BANKING-API;
+
+# Development Steps
+
+1. Clone project;
+   cd to your development directory and type git clone 
+
+2. composer update
+
+3. php artisan cache:clear
+
+4. php artisan migrate
+
+5. php artisan db:seed 
+
+SERVER: http://localhost:8000/
+
+![SETUP](https://github.com/ChocLawrence/banking-api/public/images/screenshot1.png?raw=true)
+
+## Database 
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sportsmediabank
+DB_USERNAME=root
+DB_PASSWORD="sh>@#6u+>PSrb'7T"
+
+
+![SEEDED DATABASE](https://github.com/ChocLawrence/banking-api/public/images/screenshot3.png?raw=true)
+
+
+## API ACCESS
+x-api-key = sportsMediaX123BIN 
+Authorization Bearer Token
+
+
+![API ACCESS](https://github.com/ChocLawrence/banking-api/public/images/screenshot1.png?raw=true)
+
+
+## Endpoints
+
+1. Signup : http://localhost:8000/api/signup
+2. Login : http://localhost:8000/api/login
+3. Users : http://localhost:8000/api/users
+3. Roles : http://localhost:8000/api/roles
+3. AccountTypes : http://localhost:8000/api/accounttypes
+3. Accounts : http://localhost:8000/api/accounts
+3. Transactions : http://localhost:8000/api/transactions
+
+
+![LOGIN](https://github.com/ChocLawrence/banking-api/public/images/screenshot4.png?raw=true)
+
+----------------------------------------------------------------------------------------------------
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
