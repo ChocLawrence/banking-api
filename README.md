@@ -15,7 +15,7 @@
 
 SERVER: http://localhost:8000/
 
-![SETUP](https://github.com/ChocLawrence/banking-api/public/images/screenshot1.png?raw=true)
+![SETUP](https://github.com/ChocLawrence/banking-api/blob/main/public/images/screenshot1.png?raw=true)
 
 ## Database 
 
@@ -27,14 +27,14 @@ DB_USERNAME=root
 DB_PASSWORD="sh>@#6u+>PSrb'7T"
 
 
-![SEEDED DATABASE](https://github.com/ChocLawrence/banking-api/public/images/screenshot3.png?raw=true)
+![SEEDED DATABASE](https://github.com/ChocLawrence/banking-api/blob/main/public/images/screenshot3.png?raw=true)
 
 ## API ACCESS
 x-api-key = sportsMediaX123BIN 
 Authorization Bearer Token
 
 
-![API ACCESS](https://github.com/ChocLawrence/banking-api/public/images/screenshot1.png?raw=true)
+![API ACCESS](https://github.com/ChocLawrence/banking-api/blob/main/public/images/screenshot1.png?raw=true)
 
 
 ## Endpoints
@@ -48,7 +48,7 @@ Authorization Bearer Token
 3. Transactions : http://localhost:8000/api/transactions
 
 
-![LOGIN](https://github.com/ChocLawrence/banking-api/public/images/screenshot4.png?raw=true)
+![LOGIN](https://github.com/ChocLawrence/banking-api/blob/main/public/images/screenshot4.png?raw=true)
 
 ----------------------------------------------------------------------------------------------------
 
