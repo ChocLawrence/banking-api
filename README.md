@@ -29,7 +29,6 @@ DB_PASSWORD="sh>@#6u+>PSrb'7T"
 
 ![SEEDED DATABASE](https://github.com/ChocLawrence/banking-api/public/images/screenshot3.png?raw=true)
 
-
 ## API ACCESS
 x-api-key = sportsMediaX123BIN 
 Authorization Bearer Token
