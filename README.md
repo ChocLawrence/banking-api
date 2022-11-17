@@ -13,6 +13,8 @@
 
 5. php artisan db:seed 
 
+6. php artisan serve
+
 SERVER: http://localhost:8000/
 
 ![SETUP](https://github.com/ChocLawrence/banking-api/blob/main/public/images/screenshot1.png?raw=true)
